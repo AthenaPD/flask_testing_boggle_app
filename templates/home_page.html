@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Boggle{% endblock %}
+{% block content %}
+<h1>BOGGLE</h1>
+<div id="board">
+<table>
+    <tbody>
+        {% for i in range(5) %}
+            <tr>
+                {% for i in range(5) %}
+                    <td>😊</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+<br>
+<form action="/play">
+    <button type="submit">Start</button>
+</form>
+{% endblock %}

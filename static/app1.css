@@ -1,0 +1,64 @@
+body {
+    background-color: rgb(127, 198, 201);
+    text-align: center;
+}
+
+#board {
+    display: inline-table;
+}
+
+td {
+    width: 90px;
+    height: 90px;
+    border: 2px solid black;
+    font-size: 2.5rem;
+    background-color: beige;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+#guess-form > button {
+    margin-top: 20px;
+    font-size: 1.25rem;
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 20px;
+}
+
+label, input {
+    font-size: 1.5rem;
+}
+
+#response > p {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#score > p {
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgb(90, 0, 128);
+    margin: 10px;
+}
+
+.success {
+    color: rgba(0, 128, 0, 0.716);
+}
+
+.error {
+    color: rgba(176, 0, 0, 0.552);
+}
+
+#score > form > button {
+    font-size: 1.5rem;
+}
+
+button {
+    border-radius: 5px;
+    border-width: 1px;
+    padding: 3px 8px;
+}
