@@ -19,7 +19,7 @@ table {
     border-collapse: collapse;
 }
 
-#guess-form > button {
+#guess-form > button, #size-form > button {
     margin-top: 20px;
     font-size: 1.25rem;
 }

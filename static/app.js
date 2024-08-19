@@ -2,13 +2,19 @@ const $response = $("#response p");
 const $score = $("#score p");
 const $guessForm = $("#guess-form");
 let totalScore = 0;
+let foundWords = [];
 
 $guessForm.on("submit", handleGuessSubmit);
 
 function handleGuessSubmit(evt) {
     evt.preventDefault();
     const guess = $("#guess").val();
-    checkGuess(guess.toLowerCase());
+    if (foundWords.includes(guess)) {
+        $response.text("This word was already found!");
+        $response.removeClass("success").addClass("error");
+    } else {
+        checkGuess(guess.toLowerCase());
+    }
     evt.target.reset();
 }
 
@@ -18,6 +24,7 @@ async function checkGuess(guess) {
         $response.text("Good Job!");
         $response.removeClass("error").addClass("success");
         totalScore += guess.length;
+        foundWords.push(guess);
         $score.text(`Score: ${totalScore}`);
     } else if (response.data.result === "not-on-board") {
         $response.text("Your word is NOT on the board. Please try again!");
@@ -35,4 +42,4 @@ async function endGame() {
     const response = await axios.post("http://127.0.0.1:5000/play", {game: "off", score: totalScore});
 }
 
-// setTimeout(endGame, 60000);
+setTimeout(endGame, 60000);

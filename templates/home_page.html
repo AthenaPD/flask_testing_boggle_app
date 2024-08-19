@@ -16,7 +16,9 @@
 </table>
 </div>
 <br>
-<form action="/play">
+<form action="/play" id="size-form">
+    <label for="board-size">Board size:</label>
+    <input type="text" placeholder="i.e. 5 for 5 rows + columns" id="board-size" name="board-size">
     <button type="submit">Start</button>
 </form>
 {% endblock %}
