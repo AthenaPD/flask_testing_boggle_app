@@ -46,6 +46,7 @@ class Game {
     async endGame() {
         $guessForm.hide();
         $response.text("Good game!");
+        $response.removeClass("error").addClass("success");
 
         const response = await axios.post("http://127.0.0.1:5000/play", {game: "off", score: this.totalScore});
     }
